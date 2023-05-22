@@ -6,7 +6,14 @@ import { Pagina3Screen } from '../screens/Pagina3Screen';
 import * as React from 'react';
 import { PersonaScreen } from '../screens/PersonaScreen';
 
-const Stack = createStackNavigator();
+export type RootStackParams = {
+Pagina1Screen : undefined,
+Pagina2Screen : undefined,
+Pagina3Screen : undefined,
+PersonaScreen : { id: number, nombre: string},
+}
+
+const Stack = createStackNavigator<RootStackParams>();
 
 export const StackNavigator = () => {
   return (

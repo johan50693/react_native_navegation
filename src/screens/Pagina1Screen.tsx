@@ -20,14 +20,34 @@ export const Pagina1Screen = ( {navigation}: Props) => {
 
         <Text> Navegar con argumentos</Text>
 
-        <TouchableOpacity
-          onPress={ () => navigation.navigate('PersonaScreen', {
-            id: 1,
-            nombre: 'Albert'
-          }) }
-        >
-          <Text>Alberrt</Text>
-        </TouchableOpacity>
+        <View style={{ flexDirection: 'row'}}>
+          <TouchableOpacity
+            style={ {
+              ...styles.botonGrande,
+              backgroundColor: '#5856D6'
+            }}
+            onPress={ () => navigation.navigate('PersonaScreen', {
+              id: 1,
+              nombre: 'Albert'
+            }) }
+          >
+            <Text  style={ styles.botonGrandeTexto}>Alberrt</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={ {
+              ...styles.botonGrande,
+              backgroundColor: '#FF9427'
+            }}
+            onPress={ () => navigation.navigate('PersonaScreen', {
+              id: 2,
+              nombre: 'Maria'
+            }) }
+          >
+            <Text  style={ styles.botonGrandeTexto}>Maria</Text>
+          </TouchableOpacity>
+        </View>
+
 
       </View>
   );
