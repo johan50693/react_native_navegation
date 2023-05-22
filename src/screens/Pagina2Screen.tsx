@@ -8,7 +8,7 @@ export const Pagina2Screen = () => {
   const navigator = useNavigation();
   return (
       <View style={styles.globalMargin}>
-        <Text> Pagina2Screen </Text>
+        <Text style={styles.title}> Pagina2Screen </Text>
 
         <Button
           title="Ir Pagina 3"
