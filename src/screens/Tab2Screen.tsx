@@ -1,8 +1,13 @@
 
 import { View, Text, StyleSheet } from 'react-native';
-import * as React from 'react';
+import React, {useEffect} from 'react';
 
 export const Tab2Screen = () => {
+
+  useEffect(() => {
+    console.log("Tab2Screen effect");
+  }, [])
+
   return (
       <View >
         <Text> Tab2Screen </Text>
