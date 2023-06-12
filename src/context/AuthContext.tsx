@@ -20,6 +20,7 @@ export interface AuthContextProps {
   authState: AuthState;
   signIn: () => void;
   changeFavoriteIcon: (iconName: string) => void;
+  logout: () => void;
 }
 
 //  Craer contexto
@@ -33,6 +34,10 @@ export const AuthProvider = ({children}: any ) => {
   const signIn = () => {
     dispatch({ type: 'signIn'});
   }
+  
+  const logout = () => {
+    dispatch({ type: 'logout'});
+  }
 
   const changeFavoriteIcon = (iconName: string) => {
     dispatch({ type: 'changeFavoriteIcon', payload: iconName});
@@ -43,6 +48,7 @@ export const AuthProvider = ({children}: any ) => {
       authState,
       signIn,
       changeFavoriteIcon,
+      logout,
     }}>
       {children}
     </AuthContext.Provider>
