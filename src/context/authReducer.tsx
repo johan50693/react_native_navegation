@@ -1,7 +1,9 @@
 import { AuthState } from "./AuthContext";
 
 
-type AuthAction = { type: 'signIn'};
+type AuthAction = 
+  | { type: 'signIn'}
+  | { type: 'changeFavoriteIcon', payload: string};
 
 export const authReducer = (state: AuthState, action: AuthAction): AuthState => {
 
@@ -12,6 +14,12 @@ export const authReducer = (state: AuthState, action: AuthAction): AuthState => 
         ...state,
         isLoggedin: true,
         userName: 'no-username-yet'
+      }
+
+    case 'changeFavoriteIcon':
+      return  {
+        ...state,
+        favoriteIcon: action.payload
       }
   
     default:

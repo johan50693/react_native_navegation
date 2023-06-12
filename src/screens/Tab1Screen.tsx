@@ -1,7 +1,6 @@
 
 import { View, Text, StyleSheet } from 'react-native';
 import React, {useEffect} from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from '../theme/appTheme';
 import { TouchableIcon } from '../components/TouchableIcon';
 
