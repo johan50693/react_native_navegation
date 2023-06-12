@@ -6,6 +6,7 @@ import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { Text, Platform } from 'react-native';
 import { TopTabNavigator } from './TopTapNavigator';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export const Tabs = () => {
 
@@ -34,23 +35,24 @@ const TabsAndroid = () => {
         tabBarIcon: ({color,focused}) => {
           // console.log(route);
 
-          let iconName: String = '';
+          let iconName: string = '';
 
           switch (route.name) {
             case 'Tab1':
-              iconName = 'T1';
+              
+              iconName = "logo-ionic";
               break;
             
             case 'Tab2':
-              iconName = 'T2';
+              iconName = "tablet-landscape-outline";
               break;
 
             case 'StackNavigator':
-              iconName = 'St';
+              iconName = "document-outline";
               break;
           
           }
-          return <Text style= {{color}} >{iconName}</Text>
+          return <Icon name={iconName} size={20} color='white' />;
         }
       })}
     >
@@ -87,19 +89,20 @@ export const TabsIOS = () => {
 
           switch (route.name) {
             case 'Tab1':
-              iconName = 'T1';
+              
+              iconName = "logo-ionic";
               break;
             
             case 'Tab2':
-              iconName = 'T2';
+              iconName = "tablet-landscape-outline";
               break;
 
             case 'StackNavigator':
-              iconName = 'St';
+              iconName = "document-outline";
               break;
           
           }
-          return <Text style= {{color}} >{iconName}</Text>
+          return <Icon name={iconName} size={30} color='white' />;
         }
       })}
       
