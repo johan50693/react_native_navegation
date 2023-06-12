@@ -1,12 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
-import { Tab2Screen } from '../screens/Tab2Screen';
-import { Tab3Screen } from '../screens/Tab3Screen';
 import { StackNavigator } from './StackNavigator';
 import { colors } from '../theme/appTheme';
 import { Text, Platform } from 'react-native';
+import { TopTabNavigator } from './TopTapNavigator';
 
 export const Tabs = () => {
 
@@ -32,7 +31,7 @@ const TabsAndroid = () => {
         tabBarLabelStyle: {
           fontSize: 15
         },
-        tabBarIcon: ({color,focused,size}) => {
+        tabBarIcon: ({color,focused}) => {
           // console.log(route);
 
           let iconName: String = '';
@@ -56,7 +55,7 @@ const TabsAndroid = () => {
       })}
     >
       <BottonTabAndroid.Screen name="Tab1" options={{title: 'Tab1'}} component={Tab1Screen} />
-      <BottonTabAndroid.Screen name="Tab2" options={{title: 'Tab2'}} component={Tab2Screen} />
+      <BottonTabAndroid.Screen name="Tab2" options={{title: 'Tab2'}} component={TopTabNavigator} />
       <BottonTabAndroid.Screen name="StackNavigator" options={{title: 'Stack'}} component={StackNavigator} />
     </BottonTabAndroid.Navigator>
   );
@@ -107,7 +106,7 @@ export const TabsIOS = () => {
     >
       {/* <Tab.Screen name="Tab1" options={{title: 'Tab1', tabBarIcon: (props) => <Text style={{color: props.color}} >Text1</Text>}} component={Tab1Screen} /> */}
       <BottonTabIOS.Screen name="Tab1" options={{title: 'Tab1'}} component={Tab1Screen} />
-      <BottonTabIOS.Screen name="Tab2" options={{title: 'Tab2'}} component={Tab2Screen} />
+      <BottonTabIOS.Screen name="Tab2" options={{title: 'Tab2'}} component={TopTabNavigator} />
       <BottonTabIOS.Screen name="StackNavigator" options={{title: 'Stack'}} component={StackNavigator} />
     </BottonTabIOS.Navigator>
   );
